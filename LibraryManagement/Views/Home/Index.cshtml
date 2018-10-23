@@ -1,0 +1,142 @@
+﻿@model HomeViewModel
+@{
+    int availableBooks = Model.BookCount - Model.LendBookCount;
+}
+<style>
+
+    .lateralder {
+    }
+
+    .lateralizq {
+        width: 70%;
+        height: auto;
+        float: left;
+        background-color:lightblue;
+        border-radius:10px;
+        padding: 10px;
+    }
+    .titles{
+        font-family:Helvetica;
+        font-size:25px;
+    }
+    body{
+        background-color:ghostwhite;
+    }
+    .arriba{
+        background-color: darkturquoise;
+    }
+    .abajo{
+        background-color:ghostwhite;
+
+    }
+    .abajo:hover{
+        background-color:lightblue;
+    }
+    #id {
+        border-top-left-radius: 7px;
+    }
+    #pr {
+        border-top-right-radius: 7px;
+    }
+</style>
+<h1>McBook</h1>
+<div class="lateralizq">
+    <font class="titles"> Libros en venta:</font>
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr class="arriba">
+                <th id="id">ID</th>
+                <th>Nombre</th>
+                <th>Nombre de autor</th>
+                <th id="pr">Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="abajo">
+                <td>1</td>
+                <td>The Millionaire Fastlane</td>
+                <td>M J DeMarco</td>
+                <td>400</td>
+            </tr>
+
+            <tr class="abajo">
+                <td>2</td>
+                <td>Unscripted</td>
+                <td>M J DeMarco</td>
+                <td>360</td>
+            </tr>
+
+            <tr class="abajo">
+                <td>3</td>
+                <td>The 10X Rule</td>
+                <td>Grant Cardone</td>
+                <td>200</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+    <a asp-controller="Book">Ver mas...</a>
+    <br />
+    <font class="titles"> Usuarios recientes:</font>
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr class="arriba">
+                <th id="id">ID</th>
+                <th>Nombre</th>
+                <th>Libros en posesión</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="abajo">
+                <td>1</td>
+                <td>Willie Parodi</td>
+                <td>0</td>
+            </tr>
+
+            <tr class="abajo">
+                <td>2</td>
+                <td>Leoma Gosse</td>
+                <td>0</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <a  asp-controller="Customer">Ver mas...</a>
+</div>
+<div class="lateralder">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Cuenta de Clientes
+                </div>
+                <div class="panel-body">
+                    Hay @Model.CustomerCount Usuarios
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Cuenta de Autores
+                </div>
+                <div class="panel-body">
+                    Hay @Model.AuthorCount Autores
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Cuenta de Libros
+                </div>
+                <div class="panel-body">
+                    Hay @availableBooks Libros disponibles de  @Model.BookCount Libros
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

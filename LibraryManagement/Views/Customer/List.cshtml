@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CustomerViewModel>
+
+
+<style>
+    body {
+        background-color: ghostwhite;
+    }
+
+    .arriba {
+        background-color: darkturquoise;
+    }
+
+    .abajo {
+        background-color: ghostwhite;
+    }
+
+        .abajo:hover {
+            background-color: lightblue;
+        }
+
+    #id {
+        border-top-left-radius: 7px;
+    }
+
+    #pr {
+        border-top-right-radius: 7px;
+    }
+
+    .contener {
+        margin: 5%;
+        background-color: aliceblue;
+    }
+</style>
+<div class="contener">
+    <a class="btn btn-primary mt-5" style="margin: 10px" asp-controller="Customer" asp-action="Create">Crear nuevo usuario</a>
+
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr class="arriba">
+                <th id="id">ID</th>
+                <th>Nombre</th>
+                <th>Cedula</th>
+                <th>Edad</th>
+                <th>Cuenta de Libros en posesion</th>
+                <th id="pr">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customerVM in Model)
+            {
+                <tr class="abajo">
+                    <td>@customerVM.Customer.CustomerId</td>
+                    <td>@customerVM.Customer.Name</td>
+                    <td>@customerVM.Customer.Cedula</td>
+                    <td>@customerVM.Customer.Edad</td>
+                    <td>@customerVM.BookCount</td>
+
+                    <td>
+                        <div class="form-group">
+                            <div class="btn-group">
+                                <a class="btn btn-default" asp-controller="Customer" asp-action="Update" asp-route-id="@customerVM.Customer.CustomerId">Editar</a>
+                                <a class="btn btn-primary" asp-controller="Customer" asp-action="Delete" asp-route-id="@customerVM.Customer.CustomerId">Borrar </a>
+                            </div>
+                        </div>
+                    </td>
+        
+                    </tr>
+}
+            </tbody>
+            </table>
+            </div>

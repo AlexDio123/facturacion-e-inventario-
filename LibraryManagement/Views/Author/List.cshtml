@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Author>
+<br />
+<style>
+    body {
+        background-color: ghostwhite;
+    }
+
+    .contener {
+        margin: 5%;
+        background-color: aliceblue;
+    }
+</style>
+<div class="contener">
+    <a class="btn btn-success mt-5" style="margin: 10px" asp-controller="Author" asp-action="Create">Crear Nuevo Autor</a>
+    <div class="row">
+        @foreach (var author in Model)
+        {
+            @Html.Partial("AuthorPartial", author)
+        }
+    </div>
+    </div>

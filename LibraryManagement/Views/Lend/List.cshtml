@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Book>
+<style>
+    body {
+        background-color: ghostwhite;
+    }
+
+    .arriba {
+        background-color: darkturquoise;
+    }
+
+    .abajo {
+        background-color: ghostwhite;
+    }
+
+        .abajo:hover {
+            background-color: lightblue;
+        }
+
+    #id {
+        border-top-left-radius: 7px;
+    }
+
+    #pr {
+        border-top-right-radius: 7px;
+    }
+
+    .contener {
+        margin: 5%;
+        background-color: aliceblue;
+    }
+</style>
+<div class="contener">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr class="arriba">
+                <th id="id">ID</th>
+                <th>Nombre</th>
+                <th>Nombre del Autor</th>
+                <th id="pr">Tomar un libro</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Book book in Model)
+            {
+                <tr class="abajo">
+                    <td>@book.BookId</td>
+                    <td>@book.Title</td>
+                    <td>@book.Author.Name</td>
+                    <td><a class="btn btn-info" asp-area="" asp-controller="Lend" asp-action="LendBook" asp-route-bookId="@book.BookId">Tomar</a></td>
+                    <td>
+                        <form asp-controller="LendController" asp-action="EnviarCorreo" asp-route-id="@book.BookId">
+                            <input type="text">
+                            <input type="submit" class="btn btn-primary" value="Enviar reporte por e-mail">
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>

@@ -1,0 +1,54 @@
+﻿@model BookViewModel
+<style>
+    body {
+        background-color: ghostwhite;
+    }
+
+    .contener {
+        margin: 5%;
+        background-color: aliceblue;
+    }
+</style>
+<div class="contener">
+    <link href="~/css/libreriaK.css" rel="stylesheet" />
+    <div class="row orderForm">
+        <form asp-controller="Book" asp-action="Create" method="post" class="form-horizontal" role="form">
+            <h3 class="col-md-offset-2 ">Añadir nuevo libro</h3>
+
+            <div class="form-group">
+                <label asp-for="Book.Author" class="col-md-2 control-label">Autor</label>
+                <div class="col-md-4">
+                    @Html.DropDownListFor(m => m.Book.AuthorId,
+                                           new SelectList(Model.Authors.Select(x => new { Value = x.AuthorId, Text = x.Name }), "Value", "Text"), "Seleccione un autor",
+                                           htmlAttributes: new { @class = "form-control border-input" })
+                    <span asp-validation-for="Book.Author" class="text-danger"></span>
+                </div>
+
+
+                <div class="col-md-2">
+                    <a class="btn btn-info animed fadeInRight" style="width:100%" asp-controller="Author" asp-action="Create">Crear Autor</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Title" class="col-md-2 control-label">Título</label>
+                <div class="col-md-6">
+                    <input asp-for="Book.Title" class="form-control" placeholder="Escriba el título del libro" />
+                    <span asp-validation-for="Book.Title" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Precio" class="col-md-2 control-label">Precio</label>
+                <div class="col-md-6">
+                    <input asp-for="Book.Precio" class="form-control" placeholder="Precio del libro" />
+                    <span asp-validation-for="Book.Precio" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="btn-group col-md-offset-2 col-md-6">
+                    <input class="btn btn-default" type="submit" value="Atrás" asp-controller="Book" asp-action="List" />
+                    <input class="btn btn-primary" type="submit" value="Añadir" />
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
