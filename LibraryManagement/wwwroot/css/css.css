@@ -6,96 +6,137 @@
 .LoginMainContainer {
     width: 100%;
     height: 100vh;
+    background: #1841c4;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-}
-
-.leftSide {
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.leftSide img {
-    width: 100%;
-    height: 100%;
-    filter: contrast(70%);
-}
-
-.rightSide {
-    width: 50%;
-    height: 100%;
-    background: #101010;
-    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
-.LoginFormContainer {
-    width: 70%;
-    height: 60%;
-}
-
-.LoginFormContainer form {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-flow: column nowrap;
-}
-
-.LoginFormContainer form h1 {
-    color: #fff;
-    width: 78%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.InputContainer {
-    height: 60px;
-    margin: 15px 0;
-}
-
-.InputContainer label {
-    display: block;
-    color: #c82525;
-    margin: 10px 0;
-    font-weight: 800;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
-}
-
-.InputContainer input {
-    display: inline-block;
-    width: 350px;
-    height: 20px;
-    margin: 0 5px;
-    outline: none;
-    background: transparent;
-    border: none;
-    border-bottom: solid 2px #909090;
-    color: #fff;
-    padding: 5px;
-    font-size: 16px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-button {
-    margin: 15px 0;
-    display: inline-block;
-    width: 360px;
-    height: 40px;
-    border: none;
-    cursor: pointer;
-    background: #c82525;
-    color: #fff;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: all .4s;
-}
-
-button:hover {
+.LoginMainContainer .LoginContainer {
+    width: 70vw;
+    height: 50vh;
     background: #fff;
-    color: #c82525;
-    font-weight: 700;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-shadow: 2px 2px 30px 3px #000411;
+    box-shadow: 2px 2px 30px 3px #000411;
+}
+
+.LoginMainContainer .LoginContainer .LoginSideContainer {
+    width: 35%;
+    height: 100%;
+    background: #1f1f1f;
+    position: relative;
+    color: #fff;
+    z-index: 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.LoginMainContainer .LoginContainer .LoginSideContainer h2 {
+    font-size: 45px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.LoginMainContainer .LoginContainer .LoginSideContainer::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -1px;
+    height: 100%;
+    background: inherit;
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-transform: skewx(8deg);
+    -ms-transform: skewx(8deg);
+    transform: skewx(8deg);
+    z-index: -2;
+}
+
+.LoginMainContainer .LoginContainer .LoginFormContainer {
+    width: 75%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.LoginMainContainer .LoginContainer .LoginFormContainer .LoginFormContent {
+    width: 75%;
+    height: 75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.LoginMainContainer .LoginContainer .LoginFormContainer .LoginFormContent input {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    margin: 20px 0px;
+    border: none;
+    background: transparent;
+    color: #0b0b0b;
+    border-bottom: solid 3px #0b0b0b;
+    outline: none;
+    font-size: 1.3em;
+}
+
+.LoginMainContainer .LoginContainer .LoginFormContainer .LoginFormContent input:focus {
+    border-bottom: solid 3px #0229a8;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.LoginMainContainer .LoginContainer .LoginFormContainer .LoginFormContent button {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 1.8em;
+    background: transparent;
+    border: solid 3px #0b0b0b;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.LoginMainContainer .LoginContainer .LoginFormContainer .LoginFormContent button:hover {
+    border: solid 3px #0229a8;
+    color: #0229a8;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
 }
