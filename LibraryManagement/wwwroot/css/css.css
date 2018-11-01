@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.LoginMainContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.leftSide {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.leftSide img {
+    width: 100%;
+    height: 100%;
+    filter: contrast(70%);
+}
+
+.rightSide {
+    width: 50%;
+    height: 100%;
+    background: #101010;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginFormContainer {
+    width: 70%;
+    height: 60%;
+}
+
+.LoginFormContainer form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.LoginFormContainer form h1 {
+    color: #fff;
+    width: 78%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.InputContainer {
+    height: 60px;
+    margin: 15px 0;
+}
+
+.InputContainer label {
+    display: block;
+    color: #c82525;
+    margin: 10px 0;
+    font-weight: 800;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.InputContainer input {
+    display: inline-block;
+    width: 350px;
+    height: 20px;
+    margin: 0 5px;
+    outline: none;
+    background: transparent;
+    border: none;
+    border-bottom: solid 2px #909090;
+    color: #fff;
+    padding: 5px;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+    margin: 15px 0;
+    display: inline-block;
+    width: 360px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background: #c82525;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all .4s;
+}
+
+button:hover {
+    background: #fff;
+    color: #c82525;
+    font-weight: 700;
+}
